@@ -9,10 +9,11 @@
     --color-text: #2C2C2C;         /* Dark text */
     --color-text-light: #6B6B6B;   /* Subtle text */
     --color-white: #FFFFFF;
+    --color-card: #fff; 
 
     /* Typography */
-    --font-heading: 'Your Heading Font', sans-serif;
-    --font-body: 'Your Body Font', sans-serif;
+    --font-heading: 'Cabin', sans-serif;
+    --font-body: 'Noto Sans', sans-serif;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -42,6 +43,8 @@ body.dark {
     --color-text: #F5F5F5;
     --color-text-light: #A0A0A0;
     --color-bg-dark: #2C2C2E;
+    --color-card: #353335; 
+
 }
 
 .dark-mode-toggle {
@@ -235,10 +238,13 @@ section {
 }
 
 .project-card {
+  background: var(--color-card);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px;
   padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
 }
 
 .project-image {
