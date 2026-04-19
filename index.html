@@ -13,12 +13,12 @@
 
     <!-- NAVIGATION -->
     <nav class="navbar">
-        <div class="nav-logo">ceeline.</div>
-        <ul class="nav-links">
+    <a href="#home" class="nav-logo">ceeline.</a>        
+    <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#fun">Fun</a></li>
+            <li><a href="#fun">Current</a></li>
             <li><a href="#contact">Contact</a></li>
             <button class="dark-mode-toggle" id="darkToggle">🌙</button>
         </ul>
@@ -37,7 +37,6 @@
             </div>
         </div>
         <div class="hero-visual">
-            <!-- Your photo or illustration goes here -->
             <div class="hero-image-wrapper">
                 <img src="assets/ProfilePic.jpg" alt="Ceeline Hermocilla" class="hero-image">
             </div>
@@ -49,11 +48,12 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>Hey! I'm Ceeline, a fourth-year IT student at PHINMA St. Jude College of Manila who loves building things - whether that's web applications, games, or systems that actually make people's lives easier.</p>
-                    <p>I started with C++ and Java, fell into web development through my capstone project, and somehow ended up making a medieval fighting game with MonoGame. I like projects that challenge me and let me be creative at the same time.</p>
-                    <p>When I'm not coding, I'm probably gaming, exploring, or looking for the next thing to build.</p>
-                </div>
+<div class="about-text">
+    <p>Hey! I'm Ceeline, a fourth-year IT student at PHINMA St. Jude College of Manila. Tech has always been my thing - I was the kid who just <em>got</em> computers, and that curiosity never really went away.</p>
+    <p>I started with C++ and Java, fell into web development through my capstone project, and somehow ended up making a medieval fighting game with MonoGame. Five projects later, I'm still finding new things to build.</p>
+    <p>In group projects I tend to take the lead and get hands-on with everything. I'd rather figure something out by doing it than just read about it.</p>
+    <p>Long term? I want to be deep in the tech industry - and somewhere down the line, ship an indie game of my own.</p>
+</div>
             </div>
         </div>
     </section>
@@ -64,14 +64,38 @@
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
 
-                <!-- Project Card 1 -->
+                    <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/NJOpticalClinic_Preview.png" alt="NJ Optical Clinic preview">
+                    </div>
+                    <div class="project-header">
+                        <h3 class="project-title">Web-Based Optical Clinic System</h3>
+                        <span class="project-tag">Capstone Project</span>
+                        <span class="project-year">2026</span>
+
+                    </div>
+                    <p class="project-description">A full-stack web platform for clinic management, online bookings, and teleconsultations with API integrations.</p>
+                    <div class="project-tech">
+                        <span>PHP</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/CHermocilla/Web-Based-Optical-Clinic-Management" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+
                 <div class="project-card">
                     <div class="project-image">
                         <img src="assets/En Garde_Preview.png" alt="En Garde! preview">
                     </div>
                     <div class="project-header">
                         <h3 class="project-title">En Garde!</h3>
-                        <span class="project-tag">Game Dev</span>
+                        <span class="project-tag">Windows Game</span>
+                        <span class="project-year">2024</span>
+
                     </div>
                     <p class="project-description">A 2D medieval knights fighting game built around footsie mechanics using MonoGame and C#.</p>
                     <div class="project-tech">
@@ -79,48 +103,64 @@
                         <span>MonoGame</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">GitHub →</a>
+                        <a href="https://github.com/CHermocilla/EnGarde" class="project-link">GitHub →</a>
                     </div>
                 </div>
 
-                <!-- Project Card 2 -->
                 <div class="project-card">
                     <div class="project-image">
                         <img src="assets/SDT_Preview.png" alt="SDT preview">
                     </div>
                     <div class="project-header">
                         <h3 class="project-title">Single Dimensional Theatre</h3>
-                        <span class="project-tag">Web App</span>
+                        <span class="project-tag">Windows Application</span>
+                        <span class="project-year">2024</span>
+
                     </div>
                     <p class="project-description">A movie booking system with seat reservations, user authentication, and an admin dashboard built with C# and SQL.</p>
                     <div class="project-tech">
-                        <span>C#</span>
-                        <span>SQL</span>
+                        <span>C# .NET</span>
+                        <span>MySQL</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">GitHub →</a>
+                        <a href="https://github.com/CHermocilla/SingleDimensionalTheatre" class="project-link">GitHub →</a>
                     </div>
                 </div>
 
-                <!-- Project Card 3 -->
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/NJOpticalClinic_Preview.png" alt="NJ Optical Clinic preview">
-                    </div>
-                    <div class="project-header">
-                        <h3 class="project-title">Optical Clinic System</h3>
-                        <span class="project-tag">Capstone</span>
-                    </div>
-                    <p class="project-description">A full-stack web platform for clinic management, online bookings, and teleconsultations with API integrations.</p>
-                    <div class="project-tech">
-                        <span>PHP</span>
-                        <span>MySQL</span>
-                        <span>REST APIs</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">GitHub →</a>
-                    </div>
+                <div class="project-image">
+                    <img src="assets/Ebochord_Preview.png" alt="E - Bochord preview">
                 </div>
+                <div class="project-header">
+                    <h3 class="project-title">E-Bochord Library System</h3>
+                    <span class="project-tag">Windows Application</span>
+                    <span class="project-year">2022</span>
+                </div>
+                <p class="project-description">A Java library management system where users can create accounts, borrow books, download e-books, and track records - replacing pen and paper with a fully digital system.</p>
+                <div class="project-tech">
+                    <span>Java</span>
+                    <span>MySQL</span>
+                </div>
+
+            </div>
+
+            <div class="project-card">
+            <div class="project-image">
+                <img src="assets/TAFF_Preview.png" alt="Froggit the Frog preview">
+            </div>
+            <div class="project-header">
+                <h3 class="project-title">The Adventures of Froggit the Frog</h3>
+                    <span class="project-tag">Text Adventure</span>
+                    <span class="project-year">2022</span>
+            </div>
+            <p class="project-description">A C++ text-based adventure game inspired by classic titles like Zork, where player choices shape the story and outcome.</p>
+            <div class="project-tech">
+                <span>C++</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/CHermocilla/The-Adventures-of-Froggit-the-Frog" class="project-link">GitHub →</a>
+            </div>
+        </div>
 
             </div>
         </div>
@@ -132,35 +172,40 @@
             <h2 class="section-title">Skills</h2>
             <div class="skills-grid">
                 <div class="skill-group">
-                    <h3>Languages</h3>
+                    <h3>Programming Languages</h3>
                     <div class="skill-tags">
                         <span>C#</span>
+                        <span>C# .NET</span>
                         <span>C++</span>
                         <span>Java</span>
                         <span>PHP</span>
-                        <span>JavaScript</span>
                         <span>HTML</span>
                         <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>MySQL</span>
+
                     </div>
                 </div>
                 <div class="skill-group">
                     <h3>Tools & Frameworks</h3>
                     <div class="skill-tags">
+                        <span>Visual Studio Code</span>
+                        <span>Visual Studio Community</span>
+                        <span>NetBeans</span>
+                        <span>IntelliJ</span>
                         <span>MonoGame</span>
-                        <span>C# .NET</span>
-                        <span>MySQL</span>
-                        <span>REST APIs</span>
                         <span>Git</span>
                         <span>Packet Tracer</span>
                     </div>
                 </div>
                 <div class="skill-group">
-                    <h3>Other</h3>
+                    <h3>Other Skills</h3>
                     <div class="skill-tags">
-                        <span>Technical Documentation</span>
-                        <span>IT Support</span>
-                        <span>User Training</span>
-                        <span>System Troubleshooting</span>
+                        <span>Technical Writing</span>
+                        <span>Basic Networking</span>
+                        <span>Microsoft Office Proficiency</span>
+                        <span>Adobe Photoshop Proficiency</span>
+                        <span>Hardware and Software Troubleshooting</span>
                     </div>
                 </div>
             </div>
@@ -172,20 +217,28 @@
         <div class="container">
             <h2 class="section-title">Beyond Code</h2>
             <div class="fun-grid">
-                <div class="fun-card">
-                    <span class="fun-emoji">🎮</span>
-                    <h3>Currently Playing</h3>
-                    <p><!-- Add what you're playing! --></p>
-                </div>
-                <div class="fun-card">
-                    <span class="fun-emoji">🌱</span>
-                    <h3>Currently Learning</h3>
-                    <p>Building my portfolio, exploring new frameworks</p>
-                </div>
+            <div class="fun-card">
+                <span class="fun-emoji">🎮</span>
+                <h3>Currently Playing</h3>
+                <ul class="fun-list">
+                    <li>- Cookie Run Kingdom - </li>
+                    <li>- Kingdom Hearts PS2 - </li>
+                </ul>
+            </div>
+
+            <div class="fun-card">
+                <span class="fun-emoji">🌱</span>
+                <h3>Currently Learning</h3>
+                <ul class="fun-list">
+                    <li>- Frameworks -</li>
+                    <li>- REACT - </li>
+                    <li>- Android Studio - </li>
+                </ul>
+            </div>
                 <div class="fun-card">
                     <span class="fun-emoji">✨</span>
                     <h3>Fun Fact</h3>
-                    <p><!-- Add something personal and fun! --></p>
+                    <p>Really bad at fighting games</p>
                 </div>
             </div>
         </div>
@@ -196,16 +249,17 @@
         <div class="container">
             <h2 class="section-title">Let's Connect</h2>
             <p class="contact-description">Whether it's a job opportunity, a project, or just a hello - I'd love to hear from you!</p>
-            <div class="contact-links">
-                <a href="mailto:ceeline.hermocilla@gmail.com" class="btn btn-primary">Email Me</a>
-                <a href="https://github.com/YOURUSERNAME" class="btn btn-secondary" target="_blank">GitHub</a>
-            </div>
+<div class="contact-links">
+    <a href="mailto:ceeline.hermocilla@gmail.com" class="btn btn-primary">Email Me</a>
+    <a href="https://github.com/CHermocilla" class="btn btn-secondary" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/ceelinehermocilla/" class="btn btn-secondary" target="_blank">LinkedIn</a>
+</div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>Built by Ceeline Hermocilla · 2026</p>
+        <p>C.H. | 2026</p>
     </footer>
 
 <script>
