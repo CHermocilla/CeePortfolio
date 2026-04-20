@@ -65,9 +65,28 @@
             <div class="projects-grid">
 
                     <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/NJOpticalClinic_Preview.png" alt="NJ Optical Clinic preview">
-                    </div>
+    <div class="project-slideshow">
+        <div class="slides">
+            <img src="assets/NJOpticalClinic_Preview 2.png" class="slide active">
+            <img src="assets/NJOpticalClinic_Preview 3.png" class="slide">
+            <img src="assets/NJOpticalClinic_Preview 4.png" class="slide">
+            <img src="assets/NJOpticalClinic_Preview.png" class="slide">
+            <img src="assets/NJOpticalClinic_Preview 5png.png" class="slide">
+            <img src="assets/NJOpticalClinic_Preview 6.png" class="slide">
+            <img src="assets/NJOpticalClinic_Preview 7.png" class="slide">
+        </div>
+        <button class="slide-btn prev">‹</button>
+        <button class="slide-btn next">›</button>
+        <div class="slide-dots">
+            <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+        </div>
+    </div>
                     <div class="project-header">
                         <h3 class="project-title">Web-Based Optical Clinic System</h3>
                         <span class="project-tag">Capstone Project</span>
@@ -87,25 +106,38 @@
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/En Garde_Preview.png" alt="En Garde! preview">
-                    </div>
-                    <div class="project-header">
-                        <h3 class="project-title">En Garde!</h3>
-                        <span class="project-tag">Windows Game</span>
-                        <span class="project-year">2024</span>
+<div class="project-card">
+    <div class="project-slideshow">
+        <div class="slides">
+            <img src="assets/En Garde_Preview 2.png" alt="En Garde! screenshot 1" class="slide active">
+            <img src="assets/En Garde_Preview 4.png" alt="En Garde! screenshot 2" class="slide">
+            <img src="assets/En Garde_Preview 3.png" alt="En Garde! screenshot 3" class="slide">
+            <img src="assets/En Garde_Preview 5.png" alt="En Garde! screenshot 4" class="slide">
+        </div>
+        <button class="slide-btn prev">‹</button>
+        <button class="slide-btn next">›</button>
+        <div class="slide-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div> 
 
-                    </div>
-                    <p class="project-description">A 2D medieval knights fighting game built around footsie mechanics using MonoGame and C#.</p>
-                    <div class="project-tech">
-                        <span>C#</span>
-                        <span>MonoGame</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/CHermocilla/EnGarde" class="project-link">GitHub →</a>
-                    </div>
-                </div>
+    <div class="project-header">
+        <h3 class="project-title">En Garde!</h3>
+        <span class="project-tag">Windows Game</span>
+        <span class="project-year">2024</span>
+    </div>
+    <p class="project-description">A 2D medieval knights fighting game built around footsie mechanics using MonoGame and C#.</p>
+    <div class="project-tech">
+        <span>C#</span>
+        <span>MonoGame</span>
+    </div>
+    <div class="project-links">
+        <a href="https://github.com/CHermocilla/EnGarde" class="project-link">GitHub →</a>
+    </div>
+</div>
 
                 <div class="project-card">
                     <div class="project-image">
@@ -257,6 +289,11 @@
         </div>
     </section>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <img src="" alt="enlarged image" id="lightbox-img">
+</div>
+
     <!-- FOOTER -->
     <footer class="footer">
         <p>C.H. | 2026</p>
@@ -275,7 +312,59 @@
             toggle.textContent = '🌙'
         }
     })
+
+// LIGHTBOX
+const lightbox = document.getElementById('lightbox')
+const lightboxImg = document.getElementById('lightbox-img')
+
+// make every slide clickable
+document.querySelectorAll('.slide').forEach(slide => {
+    slide.addEventListener('click', () => {
+        lightboxImg.src = slide.src  // THIS should grab the clicked image's src
+        lightbox.classList.add('active')
+    })
+})
+
+// click anywhere to close
+lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active')
+})
+    // SLIDESHOW
+    document.querySelectorAll('.project-slideshow').forEach(slideshow => {
+        const slides = slideshow.querySelectorAll('.slide')
+        const dots = slideshow.querySelectorAll('.dot')
+        const prevBtn = slideshow.querySelector('.prev')
+        const nextBtn = slideshow.querySelector('.next')
+        let current = 0
+
+        function goToSlide(index) {
+            // remove active from current
+            slides[current].classList.remove('active')
+            dots[current].classList.remove('active')
+            
+            // update current
+            current = (index + slides.length) % slides.length
+            
+            // add active to new current
+            slides[current].classList.add('active')
+            dots[current].classList.add('active')
+        }
+
+        // prev/next buttons
+        prevBtn.addEventListener('click', () => goToSlide(current - 1))
+        nextBtn.addEventListener('click', () => goToSlide(current + 1))
+
+        // dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index))
+        })
+
+        // auto advance every 3 seconds
+        setInterval(() => goToSlide(current + 1), 3000)
+    })
 </script>
+
+
 
 </body>
 </html>
