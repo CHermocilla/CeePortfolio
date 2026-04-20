@@ -1,0 +1,24 @@
+{
+  "name": "ceeportfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio - Ceeline Hermocilla",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CHermocilla/CeePortfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CHermocilla/CeePortfolio/issues"
+  },
+  "homepage": "https://github.com/CHermocilla/CeePortfolio#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
