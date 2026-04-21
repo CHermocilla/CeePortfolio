@@ -338,7 +338,10 @@
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
+    <button class="lightbox-btn prev" id="lightbox-prev">‹</button>
     <img src="" alt="enlarged image" id="lightbox-img">
+    <button class="lightbox-btn next" id="lightbox-next">›</button>
+    <button class="lightbox-close" id="lightbox-close">✕</button>
 </div>
 
     <!-- FOOTER -->
@@ -363,18 +366,59 @@
 // LIGHTBOX
 const lightbox = document.getElementById('lightbox')
 const lightboxImg = document.getElementById('lightbox-img')
+const lightboxPrev = document.getElementById('lightbox-prev')
+const lightboxNext = document.getElementById('lightbox-next')
+const lightboxClose = document.getElementById('lightbox-close')
+
+let currentSlides = [] // stores all slides from current project
+let currentIndex = 0  // tracks which image is showing
 
 // make every slide clickable
 document.querySelectorAll('.slide').forEach(slide => {
     slide.addEventListener('click', () => {
-        lightboxImg.src = slide.src  // THIS should grab the clicked image's src
+        // get all slides from THIS specific card
+        const parentSlideshow = slide.closest('.project-slideshow')
+        currentSlides = [...parentSlideshow.querySelectorAll('.slide')]
+        currentIndex = currentSlides.indexOf(slide)
+        
+        // open lightbox with clicked image
+        lightboxImg.src = slide.src
         lightbox.classList.add('active')
     })
 })
 
-// click anywhere to close
-lightbox.addEventListener('click', () => {
+// prev button
+lightboxPrev.addEventListener('click', (e) => {
+    e.stopPropagation() // prevents lightbox from closing
+    currentIndex = (currentIndex - 1 + currentSlides.length) % currentSlides.length
+    lightboxImg.src = currentSlides[currentIndex].src
+})
+
+// next button
+lightboxNext.addEventListener('click', (e) => {
+    e.stopPropagation() // prevents lightbox from closing
+    currentIndex = (currentIndex + 1) % currentSlides.length
+    lightboxImg.src = currentSlides[currentIndex].src
+})
+
+// close button
+lightboxClose.addEventListener('click', () => {
     lightbox.classList.remove('active')
+})
+
+// click background to close
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) { // only closes if clicking background, not image/buttons
+        lightbox.classList.remove('active')
+    }
+})
+
+// keyboard navigation!
+document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return
+    if (e.key === 'ArrowLeft') lightboxPrev.click()
+    if (e.key === 'ArrowRight') lightboxNext.click()
+    if (e.key === 'Escape') lightbox.classList.remove('active')
 })
     // SLIDESHOW
     document.querySelectorAll('.project-slideshow').forEach(slideshow => {

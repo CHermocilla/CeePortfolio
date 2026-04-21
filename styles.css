@@ -594,6 +594,52 @@ section {
     border-radius: 8px;
 }
 
+.lightbox-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    z-index: 1001;
+}
+
+.lightbox-btn:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+.lightbox-btn.prev {
+    left: 20px;
+}
+
+.lightbox-btn.next {
+    right: 20px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    z-index: 1001;
+}
+
+.lightbox-close:hover {
+    background: rgba(255,255,255,0.4);
+}
+
 /*responsive thing*/
 
 /* Tablet (768px and below) */
