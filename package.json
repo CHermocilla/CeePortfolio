@@ -1,0 +1,21 @@
+{
+  "name": "ceeportfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Ceeline Hermocilla",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.16"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
